@@ -1,0 +1,108 @@
+/* Хедер */
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgb(90, 88, 88);
+    display: flex;
+    height: 70px;
+}
+
+.logo {
+    margin-top: 5px;
+    margin-left: 13px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    margin-left: 120px;
+    font-size: x-large;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.buttons {
+    margin-top: 13px;
+}
+
+
+/* Мейн */
+
+main {
+    background-color: aliceblue;
+}
+
+ul {
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+ol {
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.type_E {
+    margin-top: 30px;
+    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.type_E div {
+    border: 2px solid red;
+}
+
+.type_D {
+    border: 1px solid;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+th {
+    border: 1px solid black;
+    text-align: center;
+}
+
+
+/* Футер */
+
+footer {
+    color: white;
+    background-color: rgb(90, 88, 88);
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-network {
+    margin-left: 40px;
+}
+
+.information {
+    display: flex;
+}
+
+.copyright {
+    padding-top: 10;
+    display: flex;
+    align-items: flex-end;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo {
+    display: flex;
+}
