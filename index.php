@@ -24,10 +24,10 @@
     <main>
     <?php
 
-$x = 0; // начальное значение аргумента
+$x = 11; // начальное значение аргумента
 $encounting = 10; // количество вычисляемых элементов
 $step = 1; // шаг изменений аргументов
-$type = "D"; //тип верстки
+$type = "E"; //тип верстки
 $result; // результат функции
 $average;
 $sum = 0;
@@ -40,7 +40,9 @@ function f($x) {
         return 3*$x + 9;
     }
     else if ($x>10 && $x<20) {
-        return ($x+3)/($x**2 - 121);
+        if ($x==11){
+                echo "<p> Error </p>";
+            } else return ($x+3)/($x**2 - 121);
     }
     else if ($x>=20) {
         return $x**2 * 4;
@@ -52,26 +54,31 @@ else if ($type == 'C') echo '<ol>';
 else if ($type == 'D') echo '<table class="type_D">';
 else if ($type == 'E') echo '<div class="type_E">';
     
-for ($i = 0; $i < $encounting; $i++, $x += $step) {
-    $result = f($x);
-    if ($type == 'A') {
-        echo 'f(' . $x . ') = ' . $result. '<br>';
-        // if( $i < $encounting-1 ) echo '<br>';
-    } else if ($type == 'B') {
-            echo '<li>f(' . $x . ') = ' . $result . '</li>';
-        } else if ($type == 'C') {
-            echo '<li>f(' . $x . ') = ' . $result . '</li>';
-        } else if ($type == 'D') {
-            echo '<tr><td>' . $i . '</td><td>f(' . $x . ')</td><td>' . $result . '</td></tr>';
-        } else if ($type == 'E') {
-            echo '<div>f(' . $x . ') = ' . $result . '</div>';
+    for ($i = 0; $i < $encounting; $i++, $x += $step) {
+        if ($x==11){
+            $result = 'Error';
+        } else {
+            $result = f($x);
+            if ($result > $max) $max = $result;
+            if ($result < $min) $min = $result;
+            $sum += $result;
         }
-
+        if ($type == 'A') {
+            echo 'f(' . $x . ') = ' . $result. '<br>';
+            // if( $i < $encounting-1 ) echo '<br>';
+        } else if ($type == 'B') {
+                echo '<li>f(' . $x . ') = ' . $result . '</li>';
+            } else if ($type == 'C') {
+                echo '<li>f(' . $x . ') = ' . $result . '</li>';
+            } else if ($type == 'D') {
+                echo '<tr><td>' . $i . '</td><td>f(' . $x . ')</td><td>' . $result . '</td></tr>';
+            } else if ($type == 'E') {
+                echo '<div>f(' . $x . ') = ' . $result . '</div>';
+            }
     
-    if ($result > $max) $max = $result;
-    if ($result < $min) $min = $result;
-    $sum += $result;
-}
+        
+    }
+
 
 if ($type == 'B') echo '</ul>';
 else if ($type == 'C') echo '</ol>';
